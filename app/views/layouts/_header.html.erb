@@ -1,0 +1,55 @@
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <%=image_tag("logo.png", style: 'height:45px;width:auto;')%>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <%= link_to "Home", root_path, class: "navbar-item"%>
+
+      <a class="navbar-item">
+        Timeline
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            <%= link_to "About", about_path, class: "navbar-item"%>
+          </a>
+          <a>
+            <%= link_to "Contact", contact_path, class: "navbar-item"%>
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Report an issue
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <% if user_signed_in? %>
+          <div class="buttons">
+            <%= link_to "Account", "#", class: "button is-light"%>
+            <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "button is-light" %>
+        <% else %>
+          <div class="buttons">
+            <%= link_to "Sign up", "/users/sign_up", class: "button is-primary"%>
+            <%= link_to "Sign in", "/users/sign_in", class: "button is-light"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>
