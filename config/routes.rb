@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     get "users", to: "devise/sessions#new"
   end
   devise_for :users, controllers: {
-        sessions: 'users/sessions'
+        registrations: 'users/registrations',
+        sessions: 'users/sessions',
+        omniauth_callbacks: 'users/omniauth_callbacks'
       }
   get 'static_pages/home'
   get    "/help",   to: "static_pages#help"

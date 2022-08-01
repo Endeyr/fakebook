@@ -18,7 +18,6 @@ gem 'importmap-rails'
 gem 'jbuilder'
 gem 'jquery-rails', '~> 4.5'
 gem 'mini_magick', '~> 4.11'
-gem 'oauth2', '~> 2.0', '>= 2.0.6'
 gem 'pg', '~> 1.4', '>= 1.4.2'
 gem 'pgcli-rails'
 gem 'public_activity', '~> 2.0', '>= 2.0.2'
@@ -37,6 +36,9 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'will_paginate', '3.3.1'
 gem 'bulma-rails', '~> 0.9.3'
 gem 'coffee-rails', '~> 5.0'
+gem 'omniauth', '~> 2.1'
+gem 'omniauth-google-oauth2', '~> 1.0', '>= 1.0.1'
+gem 'omniauth-rails_csrf_protection', '~> 1.0', '>= 1.0.1'
 
 group :development, :test do
   gem 'byebug'
