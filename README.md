@@ -1,4 +1,4 @@
-# Pokebook
+# Fakebook
 
 This is a Rails 7 app for the Odin Project, https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project.
 
