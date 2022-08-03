@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+module Users
+  class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     def google_oauth2
       @user = User.from_omniauth(request.env['omniauth.auth'])
       if @user.persisted?
@@ -16,16 +17,17 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to root_path
     end
 
-  # protected
+    # protected
 
-  # The path used when OmniAuth fails
-  # def after_omniauth_failure_path_for(scope)
-  #   super(scope)
-  # end
+    # The path used when OmniAuth fails
+    # def after_omniauth_failure_path_for(scope)
+    #   super(scope)
+    # end
 
-  private
+    private
 
     def auth
       @auth ||= request.env['omniauth.auth']
     end
+  end
 end

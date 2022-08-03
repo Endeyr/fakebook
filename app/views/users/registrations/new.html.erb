@@ -21,6 +21,7 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :image, as: :image_preview, :use_default_url => true, required: false, accept: 'image/jpeg,image/gif,image/png' %>
   </div>
   <br>
   <div class="form-actions">
@@ -29,3 +30,13 @@
 <% end %>
 
 <%= render "users/shared/links" %>
+
+<script type="text/javascript">
+document.getElementById('user_image').addEventListener('change', function() {
+  var size_in_megabytes = this.files[0].size/1024/1024;
+  if (size_in_megabytes > 1) {
+    alert('Maximum file size is 1 MB. Please choose a smaller      
+    file.');
+  }
+});
+</script>

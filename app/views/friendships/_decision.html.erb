@@ -1,0 +1,8 @@
+Friend Request from <%= "#{object.full_name}" %>
+
+<%= link_to accept_friend_user_friendships_path(object) do %>
+  <button type="button" class=""> <i class=""></i> Accept</button>
+<% end %>
+<%= link_to decline_friend_user_friendships_path(object) do %>
+  <button type="button" class=""><i class=""></i> Decline</button>
+<% end %>

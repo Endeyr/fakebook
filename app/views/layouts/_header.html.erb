@@ -23,12 +23,8 @@
         </a>
 
         <div class="navbar-dropdown">
-          <a class="navbar-item">
-            <%= link_to "About", about_path, class: "navbar-item"%>
-          </a>
-          <a>
-            <%= link_to "Contact", contact_path, class: "navbar-item"%>
-          </a>
+          <%= link_to "About", about_path, class: "navbar-item"%>
+          <%= link_to "Contact", contact_path, class: "navbar-item"%>
           <hr class="navbar-divider">
           <a class="navbar-item">
             Report an issue
@@ -41,12 +37,13 @@
       <div class="navbar-item">
         <% if user_signed_in? %>
           <div class="buttons">
+            <%= link_to "Friends", '#', class: "button is-light" %>
             <%= link_to "Account", edit_user_registration_path, class: "button is-light"%>
-            <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "button is-light" %>
+            <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "button is-primary" %>
         <% else %>
           <div class="buttons">
-            <%= link_to "Sign up", "/users/sign_up", class: "button is-primary"%>
-            <%= link_to "Sign in", "/users/sign_in", class: "button is-light"%>
+            <%= link_to "Sign up", "/users/sign_up", class: "button is-light"%>
+            <%= link_to "Sign in", "/users/sign_in", class: "button is-primary"%>
           </div>
         <% end %>
       </div>
